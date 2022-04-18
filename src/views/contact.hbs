@@ -1,0 +1,37 @@
+{{> navbar}}
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-warning text-dark">
+          <h1>{{this.first_name}} {{this.last_name}}</h1>
+        </div>
+        <div class="card-body">
+          {{#if this.picture }}
+            <div class="text-center">
+              <img src="{{this.picture}}" class="img img-thumbnail img-fluid rounded" height="200px" width="200px" />
+            </div>
+          {{else}}
+            <img src="/img/sin-imagen.jpg" />
+          {{/if}}
+          <p><i class="fas fa-fw fa-envelope fa-2x"></i> {{email}}</p>
+          <p><i class="fas fa-fw fa-mobile-alt fa-2x"></i>{{phone}}</p>
+        </div>
+        <div class="card-footer">
+          <a href="/contacts/{{id}}/update">
+            <button class="btn btn-primary mb-1 btn-block"><i class="fas fa-fw fa-edit"></i> EDITAR</button>
+          </a>
+          <form action="/contacts/{{id}}/delete" method="POST">
+            <button type="submit" class="btn btn-danger btn-block"><i class="fas fa-fw fa-trash"></i> ELIMINAR</button>
+          </form>
+          {{> backhome}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3 d-flex gap-2">
+    
+  </div>
+
+  
+</div>

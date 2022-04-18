@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.clase-carol{
+  font-size: 2rem;
+  color: aqua;
+}
+
+.titulo{
+  font-family: 'Pacifico', cursive;
+}

@@ -1,0 +1,61 @@
+{{> navbar}}
+<div class="container">
+  
+  <!--
+    Este formulario se usará tanto para edición como creación, este if nos dice que si viene un id, entonces será un update, si no, será un create.
+    Para el action, si viene un id será un post a /articles/:id/update, si no, será un post a /articles/create.
+  -->
+  <form action="/contacts/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <div class="card-header">
+            <h1 class="text-center clase-carol">
+              {{#if id}}
+                <i class="fas fa-fw fa-edit"></i> Actualizando contacto 
+                <p class="alert alert-primary mt-1">{{firstname}} {{lastname}}</p>
+              {{else}}
+                <i class="fas fa-fw fa-plus"></i> Crear un nuevo contacto
+              {{/if}}
+            </h1>
+          </div>
+          <div class="card-body">
+            
+            <div class="form-group">
+              <textarea autofocus maxlength="255" cols="3" name="picture" class="form-control form-control-sm">{{picture}}</textarea>
+              <small class="text-primary"><i class="fas fa-fw fa-user"></i> Pegue enlace web de imagen</small>
+            </div>
+
+            <div class="form-group">
+              <input required type="text" name="first_name" class="form-control form-control-sm" placeholder="NOMBRE 1 NOMBRE 2" value="{{firstname}}">
+              <small class="text-primary"><i class="fas fa-fw fa-user"></i> Ingrese Nombres</small>
+            </div>
+
+            <div class="form-group">
+              <input required type="text" name="last_name" class="form-control form-control-sm" placeholder="APELLIDO 1 APELLIDO 2" value="{{lastname}}">
+              <small class="text-primary"><i class="fas fa-fw fa-user"></i> Ingrese Apellidos</small>
+            </div>
+
+            <div class="form-group">
+              <input required type="email" name="email" class="form-control form-control-sm" placeholder="email@email.com" value="{{email}}">
+              <small class="text-primary"><i class="fas fa-fw fa-user"></i> Ingrese email</small>
+            </div>
+
+            <div class="form-group">
+              <input required type="number" name="phone" class="form-control form-control-sm" placeholder="955808955" value="{{phone}}">
+              <small class="text-primary"><i class="fas fa-fw fa-mobile-alt"></i> Ingrese telefono</small>
+            </div>
+          </div>
+          <div class="card-footer">
+            {{#if id}}
+              <button type="submit" class="btn btn-success btn-block"><i class="fas fa-fw fa-edit"></i> ACTUALIZAR CAMBIOS</button>
+            {{else}}
+              <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-fw fa-plus"></i> AGREGAR CONTACTO</button>
+            {{/if}}
+              <a href="/" class="btn btn-danger btn-block"><i class="fas fa-fw fa-home"></i> CANCELAR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
