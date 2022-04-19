@@ -62,7 +62,7 @@ class ContactsController {
         id,
         picture: contact.picture,
         firstname: contact.first_name,
-        lastname: contact.first_name,
+        lastname: contact.last_name,
         email: contact.email,
         phone: contact.phone
       })
